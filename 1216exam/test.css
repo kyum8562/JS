@@ -1,0 +1,17 @@
+/* .js는 js 클래스에 해당하는 스타일 지정  */
+/* 클래스에 해당하는 값은 반복해서 사용 가능 */
+/* #first는 first id에 해당하는 스타일 지정 */
+/* id에 해당하는 값은 한 번만 쓰여야 한다 */
+/* 보통 클래스를 전체적인 스타일로 잡고 세부적인 부분은 id로 지정한다 */
+/* 적용은 id > class > span 순  */
+#first {
+  color: red;
+}
+
+span {
+  color: blue;
+}
+
+.js {
+  font-weight: bold;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test Home</title>
+        <link rel="stylesheet" href="test.css" />
+    </head>
+    <body>
+        <h2> day&night button</h2>
+        <input id = nightnday type = "button" value = "night"/>
+        
+        <h2> ul, ol, li, p, br</h2>
+        <ul>
+            <li> <a href="1.html"> HTML </a></li>
+            <li> CSS</li>
+            <li> Javascript </li>
+        </ul>
+        
+        <ol type = "I">
+            <li> <a href="1.html"> HTML </a></li>
+            <li> CSS</li>
+            <li> Javascript </li>
+        </ol>
+        
+        <ol start = "5">
+            <li> <a href="1.html"> HTML </a></li>
+            <li> CSS</li>
+            <li> Javascript </li>
+        </ol>
+
+        <p>
+            <div> div는 무색무취/공간확보 </div>
+            <span class = "js"> span은 무색무취/공간제약x </span>
+            <span id = "first"> span2 </span>
+        </p>
+
+        <script>
+            var coworkers = ["apple", "banana"];
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            
+            console.log(`Array`);
+            console.log(`coworkers Array : ${coworkers}`);
+            console.log(`fruits Array : ${fruits}`);
+            console.log(`coworkers[0] : ${coworkers[0]}`);
+            console.log(`before frutis.length : ${fruits.length}`);
+            fruits.push("kiwi");
+            console.log(`push frutis.length : ${fruits.length}`);
+            fruits.pop();
+            console.log(`pop frutis.length : ${fruits.length}`);
+
+            console.log(``);
+            console.log(`Comparison operator & Boolean`);
+            console.log(`비교연산자 '1===1' 같을 때 : ${1===1}`);
+            console.log(`비교연산자 '1===2' 다를 때 : ${1===2}`);
+
+            console.log(``);
+            
+        </script>
+
+        <h2>array loop</h2>
+        <script>
+            var numbers = [1,2,3,4,5];
+            var i = 0;
+            while( i < numbers.length ){
+                document.write(`<li> ${numbers[i]} </li>`);
+                i = i+1;
+            }
+        </script>
+
+
+        <script src = "day_night.js"></script>
+        <script src = "test.js"></script>
+        
+    </body>
+</html>
