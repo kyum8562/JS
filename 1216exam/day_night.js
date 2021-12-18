@@ -1,29 +1,44 @@
 var btn = document.querySelector('#nightnday');
 var target = document.querySelector('body');
 
+// set 객체 안에 메소드를 넣음
+var set = {
+    BodyBackgroundColor : function(color){
+        // target.style.backgroundColor = color;   
+        $('body').css('backgroundColor', color);
+    },
+    BodyColor : function(color){
+        // target.style.color = color;
+        $('body').css('color', color);
+    },
+    SpanColor : function SpanColor(color){
+        // var alist = document.querySelectorAll('span');
+        // var i = 0; 
+        // while(i<alist.length){
+        //     alist[i].style.color = color;
+        //     i++;
+        // }
+
+        //jQuery를 활용한 코드 변경
+        // $('span') -> 해당 페이지의 span 태그를 전부 제어
+        $('span').css('color',color);
+    }
+
+}
+
+
 function handleClick(){
     if(btn.value === 'night'){
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    btn.value = 'day';
-    var alist = document.querySelectorAll('span');
-    var i = 0; 
-    while(i<alist.length){
-        alist[i].style.color = 'powderblue';
-        i++;
-    }
+        set.BodyBackgroundColor('black');
+        btn.value = 'day';
+        set.BodyColor('white');
+        set.SpanColor('powderblue');
     }
     else{ 
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    btn.value = 'night';
-
-    var alist = document.querySelectorAll('span');
-    var i = 0;
-    while(i<alist.length){
-        alist[i].style.color = 'darkgreen';
-        i++;
-    }
+        set.BodyBackgroundColor('white');
+        btn.value = 'night';
+        set.BodyColor('black');
+        set.SpanColor('blue');    
   }
 }
 
