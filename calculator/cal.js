@@ -1,6 +1,9 @@
 const div1 = document.querySelector('.div1');
 const div2 = document.querySelector('.div2');
 const div3 = document.querySelector('.div3');
+const div4 = document.querySelector('.div4');
+
+const btn0 = div4.querySelector('#btn0');
 
 const btn1 = div3.querySelector('#btn1');
 const btn2 = div3.querySelector('#btn2');
@@ -22,7 +25,8 @@ const btnCal = document.querySelector('#btnCal');
 const btnClear = document.querySelector('#btnClear');
 var abc = document.querySelector('h2');
 abc.innerText = 0;
-var tmp = 0.0;
+var tmp1 = 0.0;
+var tmp2 = 0.0;
 var result = 0.0;
 var how ;
 
@@ -37,28 +41,20 @@ function clear2(num){
     }
 }
 function clear3(giho){
-    tmp = Number(abc.innerText);
-    abc.innerText = 0;
+    tmp1 = Number(abc.innerText);
+    abc.innerText += giho;
+    // console.log(def.innerText);
     how = `${giho}`;
 
-    return tmp;
+    return tmp1;
 }
 
-// const obj1 = {
-
-// }
-// var i = 1;
-// while(i <= 9){
-//  let a = `handleBtn${i}`;
-//  function a(){
-//      clear2(i);
-//  }   
-//  obj1.appendChild(a);
-// }
-// console.log(obj1);
 const btnObj = {
 
-    // 1~9 버튼 메소드
+    // 0~9 버튼 메소드
+    handleBtn0: function(){
+        clear2(0);
+    },    
     handleBtn1: function(){
         clear2(1);
     },
@@ -104,21 +100,27 @@ const btnObj = {
         return abc.innerText;
     },
     handleBtnCal: function(){
+        
         if(how === "+"){
-            result = (tmp) + Number(abc.innerText);
+            tmp2 = abc.innerText.split("+");
+            result = Number(tmp1) + Number(tmp2[1]);
         }
         else if(how === "-"){
-            result = tmp - Number(abc.innerText);
+            tmp2 = abc.innerText.split("-");
+            result = Number(tmp1) - Number(tmp2[1]);
         }
         else if(how === "x"){
-            result = tmp * Number(abc.innerText);
+            tmp2 = abc.innerText.split("x");
+            console.log(tmp2);
+            result = Number(tmp1) * Number(tmp2[1]);
         }
         else if(how === "/"){
-            result = tmp / Number(abc.innerText);
+            tmp2 = abc.innerText.split("/");
+            result = (Number(tmp1) / Number(tmp2[1])).toFixed(2);
         }
-        console.log(`first num : ${tmp}`);
-        console.log(`second num : ${abc.innerText}`);
-        console.log(`calculating : ${tmp} ${how} ${abc.innerText} = ${result}`);
+        console.log(`first num : ${tmp1}`);
+        console.log(`second num : ${tmp2[1]}`);
+        console.log(`calculating : ${tmp1} ${how} ${tmp2[1]} = ${result}`);
         console.log(`result : ${result}`);
         abc.innerText = result;
 
@@ -127,7 +129,8 @@ const btnObj = {
 }
 
 function calculation(){
-   
+    
+    btn0.addEventListener("click", btnObj.handleBtn0);
     btn1.addEventListener("click", btnObj.handleBtn1);
     btn2.addEventListener("click", btnObj.handleBtn2);
     btn3.addEventListener("click", btnObj.handleBtn3);
