@@ -1,5 +1,5 @@
 
-#calulate
+[calulator]
 
 1219-2 계산기 구현(calculator ver 1.0)
 - 사칙연산 및 Clear, Calculation 메소드를 통한 기능 구현
