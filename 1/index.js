@@ -3,7 +3,7 @@ const title = document.querySelector("#title");
 const clicked_class = "clicked";
 
 function handleClick(){
-    const hasClass = title.classList.contains(clicked_class);
+    //const hasClass = title.classList.contains(clicked_class);
     title.classList.toggle(clicked_class);
 /*
     if(hasClass){
