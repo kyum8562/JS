@@ -21,121 +21,113 @@ const btnDiv = document.querySelector('#btnDiv');
 const btnCal = document.querySelector('#btnCal');
 const btnClear = document.querySelector('#btnClear');
 var abc = document.querySelector('h2');
-abc.innerText = "";
+abc.innerText = 0;
 var tmp = 0.0;
 var result = 0.0;
-var how = "";
+var how ;
 
-function plus(a, b){
-    return a+b;
+function clear2(num){
+    if(abc.innerText === 0 || abc.innerText === "0"){
+        abc.innerText  = num;
+        return abc.innerText;
+    }
+    else{
+        abc.innerText += num;
+        return abc.innerText;
+    }
+}
+function clear3(giho){
+    tmp = Number(abc.innerText);
+    abc.innerText = 0;
+    how = `${giho}`;
+
+    return tmp;
 }
 
-function minus(a, b){
-    return a-b;
-}
+// const obj1 = {
 
-function multi(a, b){
-    return a*b;
-}
-
-function div(a, b){
-    return a/b;
-}
+// }
+// var i = 1;
+// while(i <= 9){
+//  let a = `handleBtn${i}`;
+//  function a(){
+//      clear2(i);
+//  }   
+//  obj1.appendChild(a);
+// }
+// console.log(obj1);
 const btnObj = {
+
     // 1~9 버튼 메소드
     handleBtn1: function(){
-        abc.innerText += "1";
-        console.log(abc.innerText);
-        return abc.innerText;
+        clear2(1);
     },
     handleBtn2: function(){
-        abc.innerText += "2";
-        console.log(abc.innerText);
-        return abc.innerText;
+        clear2(2);
     },
     handleBtn3: function(){
-        abc.innerText += "3";
-        return abc.innerText;
+        clear2(3);
     },
     handleBtn4: function(){
-        abc.innerText += "4";
-        return abc.innerText;
+        clear2(4);
     },
     handleBtn5: function(){
-        abc.innerText += "5";
-        return abc.innerText;
+        clear2(5);
     },
     handleBtn6: function(){
-        abc.innerText += "6";
-        return abc.innerText;
+        clear2(6);
     },
     handleBtn7: function(){
-        abc.innerText += "7";
-        return abc.innerText;
+        clear2(7);
     },
     handleBtn8: function(){
-        abc.innerText += "8";
-        return abc.innerText;
+        clear2(8);
     },
     handleBtn9: function(){
-        abc.innerText += "9";
-        return abc.innerText;
+        clear2(9);
     },
     // 사칙연산, 클리어, 계산하기 메소드
-    handleBtnClr: function(){
-        abc.innerText = "";
-        return abc.innerText;
-    },
     handleBtnPlus: function(){
-        tmp = Number(abc.innerText);
-        abc.innerText = "";
-        how = "+";
-        
-        return tmp;
+        clear3("+")
     },
     handleBtnMinus: function(){
-        tmp = Number(abc.innerText);
-        abc.innerText = "";
-        how = "-";
-
-        return abc.innerText;
+        clear3("-")
     },
     handleBtnMulti: function(){
-        tmp = Number(abc.innerText);
-        abc.innerText = "";
-        how = "x";
-
-        return abc.innerText;
+        clear3("x")
     },
     handleBtnDiv: function(){
-        tmp = Number(abc.innerText);
-        abc.innerText = "";
-        how = "/";
-
+        clear3("/")
+    },
+    handleBtnClr: function(){
+        abc.innerText = 0;
         return abc.innerText;
     },
     handleBtnCal: function(){
         if(how === "+"){
             result = (tmp) + Number(abc.innerText);
         }
-        if(how === "-"){
+        else if(how === "-"){
             result = tmp - Number(abc.innerText);
         }
-        if(how === "x"){
+        else if(how === "x"){
             result = tmp * Number(abc.innerText);
         }
-        if(how === "/"){
+        else if(how === "/"){
             result = tmp / Number(abc.innerText);
         }
         console.log(`first num : ${tmp}`);
         console.log(`second num : ${abc.innerText}`);
         console.log(`calculating : ${tmp} ${how} ${abc.innerText} = ${result}`);
         console.log(`result : ${result}`);
+        abc.innerText = result;
+
         return result;
     }
 }
 
 function calculation(){
+   
     btn1.addEventListener("click", btnObj.handleBtn1);
     btn2.addEventListener("click", btnObj.handleBtn2);
     btn3.addEventListener("click", btnObj.handleBtn3);
@@ -145,6 +137,7 @@ function calculation(){
     btn7.addEventListener("click", btnObj.handleBtn7);
     btn8.addEventListener("click", btnObj.handleBtn8);
     btn9.addEventListener("click", btnObj.handleBtn9);
+    
     btnClear.addEventListener("click", btnObj.handleBtnClr);
     btnPlus.addEventListener("click", btnObj.handleBtnPlus);
     btnMinus.addEventListener("click", btnObj.handleBtnMinus);
