@@ -4,7 +4,7 @@ const COORDS = 'coords';
 
 function getWeather(lat,log){
     // fetch를 통해서 현재 지역의 lat,log, metric, API_KEY를 통해 api를 가져오고 
-    // then을 통해 
+    // then을 통해  
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}&units=metric`
     ).then(function(response){

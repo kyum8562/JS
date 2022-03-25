@@ -42,13 +42,9 @@ function handleClick(){
   }
 }
 
-function load(){
+function init(){
     btn.addEventListener("click", handleClick);
     handleClick();
-}
-
-function init(){
-    load();
 }
 
 init();
