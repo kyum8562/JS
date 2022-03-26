@@ -80,26 +80,8 @@ console.log(set6);
 set6.clear();
 console.log(set6);
 
-// set의 교집합(intersection)
-Set.prototype.intersection = function (set) {
-  const result = new Set();
 
-  for(const val of set){
-    if(this.has(val)) result.add(val);
-  }
 
-  return result;
-}
-/*
-Set.prototype.intersection = function (set) {
-  return new Set([...this]).filter(v => set.has(v)));
-}
-*/
-const setA = new Set([1, 2, 3, 4]);
-const setB = new Set([2, 4]);
-
-console.log(setA.intersection(setB));
-console.log(setB.intersection(setA));
 
 
 
