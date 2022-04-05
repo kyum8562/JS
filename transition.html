@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .btn_wrap{
+            width: 400px;
+            height: 100px;
+            border:3px solid indigo;
+            margin : 100px auto;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .gage{
+            width: 0%;
+            height: 100%;
+            background-color: indigo;
+            position:absolute;
+            top:0;
+            left:0;
+            /* 트랜지션 지속시간 설정 */
+            transition-duration: 1s;
+            /* 트랜지션 시작되는 시간을 연기 */
+            /* transition-delay: 1s; */
+
+            /* 트랜지션 가속도 설정 */
+            transition-timing-function: ease-in-out;
+        }
+
+        .btn_wrap h3{
+            position: relative;
+            text-align: center;
+            line-height: 100px;
+            font-size: 26px;
+        }
+        .btn_wrap:hover .gage{
+            width: 100%;
+        }
+        .btn_wrap:hover h3{
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="box"></div>
+    <div class="box2"></div> -->
+
+    <div class="btn_wrap">
+        <div class="gage"></div>
+        <h3>더 보기 &rarr;</h3>
+
+    </div>
+</body>
+</html>

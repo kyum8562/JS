@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            /* 애니메이션 이름 */
+            animation-name: box_ani;
+            /* 애니메이션 지속시간 */
+            animation-duration: 2s;
+            /* 애니메이션 반복횟수 */
+            animation-iteration-count: 3;
+            /* 애니메이션 방향 */
+            animation-direction: alternate;
+            /* 애니메이션 지연시간 */
+            /* animation-delay: 2s; */
+            /* 애니메이션 가속도 설정 */
+            animation-timing-function: ease-in-out;
+            /* 애니메이션 끝난 후 상태 */
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes box_ani {
+            from{
+                marign-left: 0;
+            }
+            to{
+                margin-left: 200px;
+            }
+        }
+
+
+        /* 애니메이션/ 트랜지션 적절한 사용 */
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
