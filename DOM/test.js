@@ -1,70 +1,33 @@
-/*
-HTML을 작성도 간과하지말고 중요한부분이니 계속가자
-내가 짠 코드도 몇일 뒤면 남이 짠 코드처럼 낯설게 여겨진다
+const ul = document.getElementById('animals');
+const li = document.querySelectorAll('ul li');
+const two = document.getElementById('2');
 
-nav 태그를 한 페이지 당 하나씩만 아껴쓴다
-다른페이지로 이동할 수 있는 링크를 모아둔 네비게이션 메뉴에만 제한해서 쓰는게 좋다
+[...li].forEach((e) =>{
+    e.className = 'animal';
+})
+console.log(ul.children); // 자식들 
+console.log(ul.childNodes); // 자식들 - 공백 텍스트 포함
+console.log(ul.firstElementChild); // 첫번째자식
+console.log(ul.firstChild); // 첫번째자식 - 공백 텍스트 포함
+console.log(ul.lastElementChild); // 마지막자식
+console.log(ul.lastChild); // 마지막자식 - 공백 텍스트 포함
+console.log(ul.parentNode); // 부모노드
+console.log(two.previousElementSibling); //이전형제노드
+console.log(two.previousSibling); // 이전형제노드 - 공백 텍스트 포함
+console.log(two.nextElementSibling); // 다음형제노드
+console.log(two.nextSibling); // 다음형제노드 - 공백 텍스트 포함
+console.log(two.nextSibling.nodeType); // 노드타입(1:요소,3:텍스트,9:문서)
+console.log(two.nextElementSibling.nodeName); // 노드이름(태그이름 대문자 반환, 텍스트:#text, 문서:#document)
 
-제목, div, 순서의 순으로 작성을 하면
-보는 입장에서도 이해하기 쉬움
-개발하는 입장에서도 이해하기 쉽다
+console.log(ul.nodeValue); // 텍스트 노드가 아닌 노드라면 null 반환(getter, setter 가능)
+// console.log(ul.firstChild.nodeValue = 'world'); // 첫번째자식 - 공백 텍스트 포함
 
-논리적인 구조, 사고에 따른 코딩을 해야한다
-HTML, CSS, JS이것만 해도된다 이것만 마스터하자
+const btn = document.querySelector('button');
+const handleClick = () => {
+    console.log('hi');
+}
 
-HTML : 태그를 구조와 의미 맞게 작성할 것
-CSS : @레이아웃, 그리드@은 반드시 손이 머리보다 더 빠를정도로 익혀야 한다
-      색배열같은 etc는 검색해서 알면된다.
-      CSS framework : 금손이 만들어놓은 툴을 가져다쓰면된다
-      (Bootstrap, Semantic UI, Materialize CSS, Bulma, Foundation ...)
-      공부를 위해서는 Bootstrap가 좋다.
-      CSS Architecture : @클래스이름 - 길어지는 한이 있더라도 명시적@을 잘 설계해야한다(재사용을 위해서)
-      (BEM, SMACSS, OOCSS, SASS 등이 있다)
-      CSS Pre-processor : CSS에 프로그래밍요소를 넣는 것
+btn.addEventListener('click', handleClick);
+btn.addEventListener('click', handleClick);// 하나의 핸들러만 등록된다
 
-Vanila JS : 신택스, DOM(★★★★★★★★ 매우중요)
-            package Manager : npm, yarn 등
-            Build Tool : Prettier, ESLint, gulp, npm scripts 등
-            JS Framework : React, Vue, Angular
-                전통적인방식 : 서버 사이드 렌더링(request:유저가 원하는 정보를 요청 -> response:서버가 웹사이트를 보내줌 -> return:유저가 받음)
-                현재 : SPA == 클라이언트(=browser) 사이드 렌더링(변경되는 부분만 렌더링함 : 서버가 변경되는 부분만 렌더링 함 : 효율적)
-
-
-
-DOM(Document Object Model)
-    HTML에 내장되어있는 API
-
-브라우저에서 머선일이 일어나는지 알아야한다 -> 프론트엔드라면
-   
-appendChild : 어떤 요소를 다른 부모의 자식으로 넣어줄 때
-# CSS 아키텍처 검색해보고 젤 핫한거 하나 공부해보자
-CSS를 의식의 흐름처럼 작성하지 말자
-# 리액트 과정까지 다배웠다 -> TypeScript, CSS in JS, Next.js를 배우자
-막히면 다른것 먼저 해보고 다시 해보면 된다.(포기하기엔 아까움)
-지금 배운 것이 정말 내 것인가를 끊임없이 체크한다.
-그리고 간단하게 프로젝트를 구현해보면서 익힌다
-손이 머리보다 빠를 때까지 연습하고 또 연습해라.
-잘하고 싶다는 생각을 가지고만 한다면 -> 마음이 불안해지고 단거리밖에 뛰지 못함
-지금 순간을 즐기고 하나씩 배우다보면 -> 지속가능하게 공부를하고 즐길 수 밖에없다.
-
-하찮은 기능이라도 리액트를 통한 스킬을 보여줄 수 있다면 모든 좋다
-프로그램 중 일부가 작동이 되지 않는다고 해서도 상관없다 -> 어짜피 현직자들은 코드를 보기 때문에 -> 유용하고 + 코드가 깔끔하면 좋다
-일목 요연하게 정리된 깃허브 좋다
-모르면 가르치기라도 하면 되는데, 코드 짜는 습관이 나쁘면 노답이다
-학생 성적관리 대시보드
-할 수 있는 것부터 차곡차곡
-jjunnnys - monitering-web 참고 : 첼시 선수를 기반으로 웹만들면 좋을듯(백엔드 실력도 키울겸)
-깃헙을 볼 때, 코드 전체를 보지 않고(그렇게 관심이 많지 않음)
-히스토리를 본다, 여기서 커밋명을 날짜로 적지 않고 관련있는 변경사항들을 세부적으로 무엇을 했는지 적는것이 좋음
-ex) create components, create Grid components; 등 한국말로 ㄱ
-
-코드 가독성을 높일라면
-1. 많이 사용하는 코드 컨벤션을 쓴다
-2. 일관적인 패턴을 작성(클래스명, 변수명, 따옴표 표기법, 들여쓰기 등)
-
-또한 폴더관리에서는(src내에 css, js, images를 넣어준다)
-파일명은 : 소문자, 숫자, - _ ~ 를 사용한다(html, css, js
-    )
-값 할당시 style="font-size" 또 =사이를 띄우지 말자
-*/
-
+console.log(`ul.hasChildNodes() : ${ul.hasChildNodes()}`);

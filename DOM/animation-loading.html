@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, maximum-scale=1.5, 
+    initial-scale=1.0">
+    <link rel="'shortcut icon" href='#'>
+    <title>loading...</title>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        
+    }
+    h3{
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+    .circle{
+        display: inline-block;
+        margin: 0 auto;
+        width: 20px;
+        height: 20px;
+        background-color: yellowgreen;
+        border-radius: 50%;
+        animation: move 2s infinite;
+    }
+    .circle:nth-child(2){
+        left: 30px;
+        animation-delay: 0.1s;
+    }
+    .circle:nth-child(3){
+        left: 60px;
+        animation-delay: 0.2s;
+    }
+    .circle:nth-child(4){
+        left: 90px;
+        animation-delay: 0.3s;
+    }
+    .circle:nth-child(5){
+        left: 120px;
+        animation-delay: 0.4s;
+    }
+    .circle:nth-child(6){
+        left: 150px;
+        animation-delay: 0.5s;
+    }
+    @keyframes move {
+        0%{
+            transform: translate(0, 0) scale(0);
+            background-color: yellowgreen;
+        }
+        50%{
+            transform: translate(0, 30px) scale(0.7);
+            background-color: yellow;
+        }
+        100%{
+            transform: translate(0, 0) scale(0);
+            background-color: yellowgreen;
+        }
+    }
+    p{
+        font-size: 10px;
+        padding: 20px;
+    }
+    /* 미디어 쿼리 : 뷰포트 크기에 따라서 다른 CSS 적용  */
+    /* 브레이크 포인트 설정에 주의해ㅑㅇ 한다. */
+    @media (min-width: 200px) and (max-width: 400px) {
+        body{
+            background-color: blue;
+        }
+    }
+    @media (min-width: 401px) and (max-width: 600px) {
+        body{
+            background-color: skyblue;
+        }
+    }
+    @media (min-width: 601px) {
+        body{
+            background-color: yellow;
+        }
+    }
+    /* 인쇄 화면에 대해서 CSS 적용 */
+    @media print {
+        h1{
+            font-size: 20px;
+        }
+    }
+    .flex-container{
+        background-color: rgb(43, 139, 43);
+        height: 100vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .flex-item{
+        color: black;
+        width: 60px;
+        height: 60px;
+        background-color: whitesmoke;
+        border: 1px solid green;
+    }
+</style>
+</head>
+<body>
+    <h3>Loading ...</h3>
+    <div class="animation-wrap">
+        <div class="circle animation1"></div>
+        <div class="circle animation1"></div>
+        <div class="circle animation1"></div>
+        <div class="circle animation1"></div>
+        <div class="circle animation1"></div>
+        <div class="circle animation1"></div>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia cumque non amet, at alias quidem, delectus voluptates sapiente deserunt natus earum voluptas! Eaque maxime ab sapiente accusamus? Accusamus, aliquid numquam.
+    </p>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+        <div class="flex-item">12</div>
+        <div class="flex-item">13</div>
+        <div class="flex-item">14</div>
+        <div class="flex-item">15</div>
+    </div>
+</body>
+</html>

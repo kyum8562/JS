@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="'shortcut icon" href='#'>
+</head>
+<body>
+    <div id="container">
+        <ul id="animals">
+            <li>고양이</li>
+            <li id="2">강아지</li>
+            <li>비둘기</li>
+        </ul>
+        <button>Click me!</button>
+        <button onclick="handleClick1(this)">어트리뷰트!!</button>
+        <button class="btn2">프로퍼티!!</button>
+        <button class="btn3">addEventListener 메소드!!</button>
+    </div>
+    <script>
+
+        // 이벤트 어트리뷰트 방식
+        function handleClick1(button){
+            console.log(this); // 전역객체 window를 가리킴
+            console.log(button); // 인수로 전달한 this는 이벤트를 바인딩한 DOM 요소를 가리킴
+        }
+
+        // 이벤트 프로퍼티 방식
+        document.querySelector('.btn2').onclick = function(e){
+            console.log(this);
+            console.log(e.currentTarget);
+        }
+
+        document.querySelector('.btn3').addEventListener('click', function(e){
+            console.log(this);
+            console.log(e.currentTarget);
+        })
+    </script>
+    <script src = "./test.js"></script>
+</body>
+</html>
