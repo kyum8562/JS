@@ -11,3 +11,5 @@ function solution(participant, completion) {
     if (v > 0) return k;
   }
 }
+
+console.log();
