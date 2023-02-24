@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\개인정보수집유효기간.js"
+      "program": "${workspaceFolder}\\최댓값과최솟값.js"
     }
   ]
 }
