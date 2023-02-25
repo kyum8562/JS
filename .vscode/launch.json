@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\최댓값과최솟값.js"
+      "program": "${workspaceFolder}\\최솟값만들기.js"
     }
   ]
 }
