@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\숫자의표현.js"
+      "program": "${workspaceFolder}\\짝지어제거하기.js"
     }
   ]
 }
