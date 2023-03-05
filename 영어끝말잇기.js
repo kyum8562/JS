@@ -1,6 +1,6 @@
 function solution(n, words) {
   let lastEle = "";
-  let firstEle = "";
+  let firstEle = " ";
   let arr = [];
   for (let i = 0; i < words.length; i++) {
     for (let j = 0; j < arr.length; j++) {
