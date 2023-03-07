@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\영어끝말잇기.js"
+      "program": "${workspaceFolder}\\dfs.js"
     }
   ]
 }
